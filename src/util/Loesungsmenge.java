@@ -47,7 +47,7 @@ public class Loesungsmenge {
      * Gibt Wert eines Talers zurueck.
      * @return einen Taler
      */
-    public int getTaler(int index)
+    public Integer getTaler(int index)
     {
         return talerList.get(index);
     }
