@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"util","l":"Ausgangsmenge"},{"p":"util","l":"Kopierer"},{"p":"util","l":"Loesungsmenge"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"Starten"},{"p":"<Unnamed>","l":"Verteilung"}];updateSearchResults();
