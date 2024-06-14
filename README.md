@@ -1,4 +1,5 @@
 "# CoinDistribution-ObjectOriented" 
+
 A given set of talers with different valence and frequency is to be divided among a given number of n sets 
 in such a way that all n sets are of equal value. 
 If such a solution cannot be found, this is also output.
