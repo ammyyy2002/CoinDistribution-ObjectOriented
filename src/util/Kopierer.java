@@ -10,9 +10,9 @@ import java.util.List;
 public class Kopierer {
 
     /**
-     * Kopiert eine <code>List</code> von <code>utli.Taler</code> (deep copy).
-     * @param lt kopierende <code>List</code> von <code>utli.Taler</code>.
-     * @return tiefe Kopie der uebergebenen <code>List</code> -> neue Instanz, die neue Instanzen beinhaltet.
+     * Kopiert eine <code>List</code> von Talern (deep copy).
+     * @param lt zu kopierende <code>List</code> von Talern
+     * @return deep Copy der uebergebenen <code>List</code>
      */
     public List<Integer> copyTalerList(List<Integer> lt)
     {
@@ -23,7 +23,7 @@ public class Kopierer {
     /**
      * Kopiert eine <code>List</code> von <code>util.Loesungsmengen</code> (deep copy).
      * @param lml kopierende <code>List</code> von <code>util.Loesungsmengen</code>.
-     * @return tiefe Kopie der uebergebenen <code>List</code> -> neue Instanz, die neue Instanzen beinhaltet.
+     * @return deep Copy der uebergebenen <code>List</code>
      */
     public List<Loesungsmenge> copyLMList (List<Loesungsmenge> lml)
     {

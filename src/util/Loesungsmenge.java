@@ -40,16 +40,12 @@ public class Loesungsmenge {
      */
     public int getTalerSumme()
     {
-        int summe = 0;
-        for (Integer taler : talerList) {
-            summe += taler;
-        }
-        return summe;
+        return talerList.stream().mapToInt(Integer::intValue).sum();
     }
 
     /**
      * Gibt Wert eines Talers zurueck.
-     * @return gibt Liste aller Taler zurück
+     * @return einen Taler
      */
     public int getTaler(int index)
     {
@@ -67,7 +63,7 @@ public class Loesungsmenge {
 
     /**
      * Gibt <code>ArrayList</code>, die <code>util.Taler</code> speichert als String zurück.
-     * @return <code>String</code>
+     * @return <code>String</code>, der Taler-<code>List</code> darstellt
      */
     @Override
     public String toString()

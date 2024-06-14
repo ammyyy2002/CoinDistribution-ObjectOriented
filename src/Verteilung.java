@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * Beinhaltet Logik der rekursiven Verteilung der <code>util.Taler</code>.
+ * Beinhaltet Logik der rekursiven Verteilung der Taler.
  */
 public class Verteilung {
     private final Ausgangsmenge ausgangsmenge;
@@ -16,8 +16,8 @@ public class Verteilung {
     private final Kopierer k;
 
     /**
-     * Initialisierung der Startmenge und gesuchter Anzahl der Loesungsmengen.
-     * @param ausgangsmenge der Klasse <code>util.Ausgangsmenge</code>, welche <code>util.Taler</code> in Listenattribut speichert.
+     * Initialisierung der <code>Ausgangsmenge</code> und gesuchter Anzahl der <code>util.Loesungsmengen</code>.
+     * @param ausgangsmenge <code>util.Ausgangsmenge</code>, welche Taler in Listenattribut speichert.
      * @param anzahlLoesungsmengen zu testende Ganzzahl
      */
     public Verteilung(Ausgangsmenge ausgangsmenge, int anzahlLoesungsmengen)
@@ -28,7 +28,7 @@ public class Verteilung {
     }
 
     /**
-     * Ueberprueft, ob Gesamtwert der <code>util.Taler</code> auf Loesungsmengenanzahl aufteilbar ist und startet rekursive Funktion.
+     * Ueberprueft, ob Gesamtwert der Taler auf Anzahl der <code>util.Loesungsmengen</code> aufteilbar ist und startet rekursive Funktion.
      * @return <code>null</code>, wenn kein Ergebnis und Liste mit <code>util.Loesungsmengen</code>, wenn moegliche Verteilung gefunden wurde.
      */
     public List<Loesungsmenge> verteileTaler()
@@ -46,16 +46,16 @@ public class Verteilung {
             loesungsmengen.add(new Loesungsmenge());
         }
 
-        return verteilungsHilfe(0, ausgangsmenge.getAusgangsmenge(), loesungsmengen);
+        return verteilungsHilfe(ausgangsmenge.getAusgangsmenge(), loesungsmengen);
     }
 
 
     /**
      * Findet rekursiv eine gleichwertige Verteilung der <code>util.Ausgangsmenge</code> auf die <code>util.Loesungsmengen</code>.
      * @param restliste <code>util.Ausgangsmenge</code>, die Liste der <code>util.Taler</code> der Startmenge beinhaltet.
-     * @param loesungsmengen <code>List</code>, die alle Loesungsmengen beinhaltet.
+     * @param loesungsmengen <code>List</code>, die alle <code>util.Loesungsmengen</code> beinhaltet.
      */
-    private List<Loesungsmenge> verteilungsHilfe(int index, List<Integer> restliste, List<Loesungsmenge> loesungsmengen)
+    private List<Loesungsmenge> verteilungsHilfe(List<Integer> restliste, List<Loesungsmenge> loesungsmengen)
     {
         //Basisifall
         if (restliste.isEmpty())
@@ -70,11 +70,12 @@ public class Verteilung {
             return loesungsmengen;
         }
 
+        //Rekursionsfall
         Integer t = restliste.remove(0);
         for (int i = 0; i < anzahlLoesungsmengen; i++)
         {
             loesungsmengen.get(i).addTaler(t);
-            List<Loesungsmenge> ergebnis = verteilungsHilfe(index+1, k.copyTalerList(restliste), k.copyLMList(loesungsmengen));
+            List<Loesungsmenge> ergebnis = verteilungsHilfe(k.copyTalerList(restliste), k.copyLMList(loesungsmengen));
             if (ergebnis != null)
             {
                 return ergebnis; //erste Lösung mit Ergebnis
@@ -83,7 +84,6 @@ public class Verteilung {
             {
                 loesungsmengen.get(i).removeTaler(t);
             }
-
         }
         return null; // keine Lösung mit Ergebnis auf dieser Rekursionsebene
     }

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Speichert <code>util.Taler</code> der Start-/<code>util.Ausgangsmenge</code>.
+ * Speichert Taler der Start-/<code>util.Ausgangsmenge</code>.
  */
 public class Ausgangsmenge {
     private final List<Integer> talerListe;
@@ -30,23 +30,18 @@ public class Ausgangsmenge {
 
     /**
      * Gibt <code>util.Ausgangsmenge</code> zurueck.
-     * @return <code>List</code> der <code>util.Ausgangsmenge</code>.
+     * @return Taler-<code>List</code> der <code>util.Ausgangsmenge</code>.
      */
     public List<Integer> getAusgangsmenge() {
         return talerListe;
     }
 
     /**
-     * Gibt Summe aller <code>util.Taler</code> zurueck.
-     * @return Ganzzahl, Summe aller util.Taler.
+     * Gibt Summe aller Taler zurueck.
+     * @return Ganzzahl, Summe aller Taler.
      */
     public int getTalerSumme() {
-        int summe = 0;
-        for (Integer t : talerListe) {
-            summe += t;
-        }
-        return summe;
-        //return coins.stream().mapToInt(Coin::getValue).sum();
+        return talerListe.stream().mapToInt(Integer::intValue).sum();
     }
 }
 
