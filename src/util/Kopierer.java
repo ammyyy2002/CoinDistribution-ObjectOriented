@@ -16,18 +16,13 @@ public class Kopierer {
      */
     public List<Integer> copyTalerList(List<Integer> lt)
     {
-        List<Integer> new_lt = new ArrayList<>();
-        for (Integer taler : lt)
-        {
-            new_lt.add(taler);
-        }
-        return new_lt;
+        return new ArrayList<>(lt);
     }
 
 
     /**
-     * Kopiert eine <code>List</code> von <code>utli.Loesungsmengen</code> (deep copy).
-     * @param lml kopierende <code>List</code> von <code>utli.Loesungsmengen</code>.
+     * Kopiert eine <code>List</code> von <code>util.Loesungsmengen</code> (deep copy).
+     * @param lml kopierende <code>List</code> von <code>util.Loesungsmengen</code>.
      * @return tiefe Kopie der uebergebenen <code>List</code> -> neue Instanz, die neue Instanzen beinhaltet.
      */
     public List<Loesungsmenge> copyLMList (List<Loesungsmenge> lml)
