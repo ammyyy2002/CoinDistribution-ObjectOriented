@@ -12,7 +12,7 @@ public class Starten {
     /**
      * Startet kompletten Ablauf.
      */
-    public static void starten() {
+    public void starten() {
         Map<Integer, Integer> talerMap = new HashMap<>();
         talerMap.put(1, 3); // (wert, anzahl)
         talerMap.put(3, 3);
